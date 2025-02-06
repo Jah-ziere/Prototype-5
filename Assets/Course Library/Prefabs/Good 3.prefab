@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e598ae0ecb24a8ca41e6d2966c4ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionParticle: {fileID: 3199346384015752365, guid: 307229a5540374aae98859caad2128a3, type: 3}
 --- !u!65 &-677710016322108948
 BoxCollider:
   m_ObjectHideFlags: 0
