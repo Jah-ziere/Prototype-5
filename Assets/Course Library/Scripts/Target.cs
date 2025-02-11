@@ -14,6 +14,7 @@ public class Target : MonoBehaviour
 
     private GameManager gameManager; 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,18 +55,29 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if(gameManager.isGameActive)
+        {
         Destroy(gameObject);
 
         Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
         
         //updates score by 5 each time an object is destroyed
         gameManager.UpdateScore(5);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        if(!gameObject.CompareTag("Bad"))
+        {
+            gameManager.GameOver();
+        }
     }
+
+
+
+
 
 
 }
