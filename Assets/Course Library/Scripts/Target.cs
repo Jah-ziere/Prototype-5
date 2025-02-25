@@ -14,6 +14,8 @@ public class Target : MonoBehaviour
 
     private GameManager gameManager; 
 
+    public int scoreToAdd;
+
 
     // Start is called before the first frame update
     void Start()
@@ -62,12 +64,13 @@ public class Target : MonoBehaviour
         Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
         
         //updates score by 5 each time an object is destroyed
-        gameManager.UpdateScore(5);
+        gameManager.UpdateScore(scoreToAdd);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //calls game over in GameManager if a good item falls down then displays game over text in game
         Destroy(gameObject);
         if(!gameObject.CompareTag("Bad"))
         {
