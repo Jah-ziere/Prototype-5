@@ -93,7 +93,7 @@ public class GameManagerX : MonoBehaviour
     public void UpdateTime(int timeToRemove)
     {
         time -= timeToRemove;
-        timeText.text = "time: " + time;
+        timeText.text = "time: " +time;
     }
 
 }
