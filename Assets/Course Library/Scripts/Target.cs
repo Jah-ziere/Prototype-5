@@ -55,9 +55,9 @@ public class Target : MonoBehaviour
 
     public ParticleSystem explosionParticle;
 
-    private void OnMouseDown()
+    private void OnTriggerEnter(Collider other)
     {
-        if(gameManager.isGameActive)
+        if(other.gameObject.CompareTag("Blade")&& gameManager.isGameActive)
         {
         Destroy(gameObject);
 
@@ -66,17 +66,18 @@ public class Target : MonoBehaviour
         //updates score by 5 each time an object is destroyed
         gameManager.UpdateScore(scoreToAdd);
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //calls game over in GameManager if a good item falls down then displays game over text in game
+        else if (other.CompareTag("Sensor"))
+        {
         Destroy(gameObject);
+        //calls game over in GameManager if a good item falls down then displays game over text in game
         if(!gameObject.CompareTag("Bad"))
         {
-            gameManager.GameOver();
+            gameManager.UpdateLives(-1);
+        }
         }
     }
+
+    
 
 
 

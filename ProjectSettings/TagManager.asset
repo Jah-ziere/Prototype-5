@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bad
+  - Blade
+  - Sensor
   layers:
   - Default
   - TransparentFX
